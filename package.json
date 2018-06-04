@@ -1,36 +1,72 @@
 {
-    "name": "vscode-touchbar",
-    "displayName": "vscode-touchbar",
-    "description": "Custom touchbar commands",
-    "version": "0.0.1",
-    "publisher": "kgolinski",
-    "engines": {
-        "vscode": "^1.23.0"
-    },
-    "categories": [
-        "Other"
+  "name": "vscode-touchbar",
+  "displayName": "vscode-touchbar",
+  "description": "Custom touchbar commands",
+  "version": "0.0.2",
+  "publisher": "kgolinski",
+  "engines": {
+    "vscode": "^1.23.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.toggleLineComment",
+    "onCommand:extension.beautifySelection",
+    "onCommand:extension.sortLines",
+    "onCommand:extension.jumpToLine",
+    "onCommand:extension.terminal"
+  ],
+  "main": "./extension",
+  "contributes": {
+    "commands": [{
+        "command": "extension.toggleLineComment",
+        "title": "🌚"
+      },
+      {
+        "command": "extension.beautifySelection",
+        "title": "🌈"
+      },
+      {
+        "command": "extension.sortLines",
+        "title": "🥓"
+      },
+      {
+        "command": "extension.jumpToLine",
+        "title": "💯"
+      },
+      {
+        "command": "extension.terminal",
+        "title": "🖥"
+      }
     ],
-    "activationEvents": [
-        "onCommand:extension.sayHello"
-    ],
-    "main": "./extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.sayHello",
-                "title": "Hello World"
-            }
-        ]
-    },
-    "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.6",
-        "eslint": "^4.11.0",
-        "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
+    "menus": {
+      "touchBar": [{
+          "command": "extension.toggleLineComment"
+        },
+        {
+          "command": "extension.beautifySelection"
+        },
+        {
+          "command": "extension.sortLines"
+        },
+        {
+          "command": "extension.jumpToLine"
+        },
+        {
+          "command": "extension.terminal"
+        }
+      ]
     }
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.6",
+    "eslint": "^4.11.0",
+    "@types/node": "^7.0.43",
+    "@types/mocha": "^2.2.42"
+  }
 }

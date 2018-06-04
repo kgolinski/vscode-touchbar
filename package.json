@@ -21,7 +21,7 @@
   "contributes": {
     "commands": [{
         "command": "extension.toggleLineComment",
-        "title": "🌚"
+        "title": "💤"
       },
       {
         "command": "extension.beautifySelection",
